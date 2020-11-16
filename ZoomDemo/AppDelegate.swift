@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MobileRTCAuthDelegate {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         let navigationController = UINavigationController(rootViewController: newViewController)
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
@@ -36,13 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MobileRTCAuthDelegate {
 
         MobileRTC.shared().setMobileRTCRootController(navigationController)
 
-        let authService = MobileRTC.shared().getAuthService()
-        if (authService != nil) {
-            authService!.delegate        = self
-            authService!.clientKey       = clientKey
-            authService!.clientSecret    = clientSecret
-            authService!.sdkAuth()
+        if let authService = MobileRTC.shared().getAuthService() {
+            authService.delegate        = self
+            authService.clientKey       = clientKey
+            authService.clientSecret    = clientSecret
+            authService.sdkAuth()
         }
+
         return true
     }
 
