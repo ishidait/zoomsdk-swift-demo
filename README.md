@@ -22,6 +22,6 @@ to
 
 > ZoomDemo/Keys.swift
 
-, then edit the file and put your keys.
+, then edit the file and put your keys obtained from the following screen.
 
 <img src="https://github.com/ishidait/zoomsdk-swift-demo/blob/master/Screenshot_ZoomSDK.png?raw=true" alt="Screenshot_ZoomSDK.png" width="400" />
